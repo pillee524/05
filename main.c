@@ -1,17 +1,16 @@
 #include <stdio.h>
 
 int main(void) {
-    int a;
-
-    printf("Input one integer. : ");
-    scanf("%i", &a);
-
-    if(a<0)
-        a = -a;
-
-    else
-        a = a;
+    int counter = 0;
+    int c;
     
-    printf("The absolute value is %i\n.", a);
+    printf("Input a string.: ");
+    scanf("%i", &counter);
+
+    while ((c = getchar()) != '\n')
+        if (c>='0' && c<='9')
+            counter++;
+    
+    printf("The number of digits is %i\n.", counter);
 
     return 0; }
