@@ -1,16 +1,26 @@
 #include <stdio.h>
 
 int main(void) {
-    int counter = 0;
-    int c;
-    
-    printf("Input a string.: ");
-    scanf("%i", &counter);
+    int a,b;
+    char operator;
+    printf("Inpur the calculation: ");
+    scanf("%d %c %d", &a, &operator, &b);
 
-    while ((c = getchar()) != '\n')
-        if (c>='0' && c<='9')
-            counter++;
-    
-    printf("The number of digits is %i\n.", counter);
-
-    return 0; }
+    switch(operator){
+        case '+':
+            printf("= %d\n", a + b);
+            break;
+        case '-':
+            printf("= %d\n", a - b);
+            break;
+        case '*':
+            printf("= %d\n", a * b);
+            break;
+        case '/':
+            if(b != 0)
+                printf("= %f\n", (float)a / b);
+            else
+                printf("ZeroDivisionError.\n");
+        
+            break;}
+    }
