@@ -1,23 +1,15 @@
 #include <stdio.h>
 
 int main(void) {
-    int answer=59;
-    int b,count=0;
+    int a,i,sum=0;
 
-    printf("Guess a number: ");
-    scanf("%i", &b);
+    printf("Input an interger: ");
+    scanf("%i", &a);
 
-    do
-    {   printf("Guess a number: ");
-        scanf("%i", &b);
-         if (b < answer)
-            printf("low!\n");
-         else if (b > answer)
-            printf("high!\n");
-        count++;
-    } while(answer != b);
-      
-    printf("Congratulations! trials:%i\n", count);
+    for (i=1; i<=a; i++) {
+        sum += i;
+    }
+    printf("Sum result is: %i\n", sum);
 
     return 0;
 }
