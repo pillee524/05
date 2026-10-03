@@ -1,26 +1,23 @@
 #include <stdio.h>
 
 int main(void) {
-    int a,b;
-    char operator;
-    printf("Inpur the calculation: ");
-    scanf("%d %c %d", &a, &operator, &b);
+    int answer=59;
+    int b,count=0;
 
-    switch(operator){
-        case '+':
-            printf("= %d\n", a + b);
-            break;
-        case '-':
-            printf("= %d\n", a - b);
-            break;
-        case '*':
-            printf("= %d\n", a * b);
-            break;
-        case '/':
-            if(b != 0)
-                printf("= %f\n", (float)a / b);
-            else
-                printf("ZeroDivisionError.\n");
-        
-            break;}
-    }
+    printf("Guess a number: ");
+    scanf("%i", &b);
+
+    do
+    {   printf("Guess a number: ");
+        scanf("%i", &b);
+         if (b < answer)
+            printf("low!\n");
+         else if (b > answer)
+            printf("high!\n");
+        count++;
+    } while(answer != b);
+      
+    printf("Congratulations! trials:%i\n", count);
+
+    return 0;
+}
